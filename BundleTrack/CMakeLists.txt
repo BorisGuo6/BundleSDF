@@ -14,10 +14,10 @@ message("CMAKE_CXX_COMPILER_VERSION: ${CMAKE_CXX_COMPILER_VERSION}")
 
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 set(CMAKE_BUILD_TYPE Release)
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++14 -g")
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++17 -g")
 # set(CUDA_NVCC_FLAGS "${CUDA_NVCC_FLAGS} -Xcompiler -fPIC -gencode arch=compute_30,code=sm_30 -gencode arch=compute_75,code=sm_75 -O0 -G -g -std=c++14 -lineinfo -use_fast_math --default-stream per-thread")
 # set(CUDA_NVCC_FLAGS "${CUDA_NVCC_FLAGS} -Xcompiler -fPIC -gencode arch=compute_30,code=sm_30 -gencode arch=compute_35,code=sm_35 -gencode arch=compute_75,code=sm_75 -O3 -std=c++14 -use_fast_math --default-stream per-thread")
-set(CUDA_NVCC_FLAGS "${CUDA_NVCC_FLAGS} -dc -gencode=arch=compute_86,code=sm_86 -gencode=arch=compute_52,code=sm_52  -gencode=arch=compute_60,code=sm_60   -gencode=arch=compute_61,code=sm_61   -gencode=arch=compute_70,code=sm_70   -gencode=arch=compute_75,code=sm_75   -gencode=arch=compute_80,code=sm_80  -O3 -std=c++14 -use_fast_math --default-stream per-thread")
+set(CUDA_NVCC_FLAGS "${CUDA_NVCC_FLAGS} -dc -gencode=arch=compute_86,code=sm_86 -gencode=arch=compute_52,code=sm_52  -gencode=arch=compute_60,code=sm_60   -gencode=arch=compute_61,code=sm_61   -gencode=arch=compute_70,code=sm_70   -gencode=arch=compute_75,code=sm_75   -gencode=arch=compute_80,code=sm_80  -O3 -std=c++17 -use_fast_math --default-stream per-thread")
 # set(CUDA_NVCC_FLAGS "${CUDA_NVCC_FLAGS} -Xcompiler -fPIC -gencode arch=compute_86,code=sm_86  -O0 -G -g -std=c++14 -use_fast_math --default-stream per-thread")
 
 
@@ -51,7 +51,7 @@ find_package(LAPACK)
 
 find_package(pybind11 REQUIRED)
 find_package(Python COMPONENTS Interpreter Development REQUIRED)
-set(PYBIND11_CPP_STANDARD -std=c++14)
+set(PYBIND11_CPP_STANDARD -std=c++17)
 # set(PYBIND11_FINDPYTHON TRUE)
 
 include_directories(
@@ -88,6 +88,7 @@ message("G2O_LIBS " ${G2O_LIBS})
 message("Boost_LIBRARIES " ${Boost_LIBRARIES})
 
 set(YAML_CPP_LIBRARIES "/usr/local/lib/libyaml-cpp.so")
+# find_library(YAML_CPP_LIBRARIES yaml-cpp)
 
 
 list(REMOVE_ITEM PCL_LIBRARIES pcl_simulation)

@@ -211,8 +211,8 @@ def draw_pose():
 if __name__=="__main__":
   parser = argparse.ArgumentParser()
   parser.add_argument('--mode', type=str, default="run_video", help="run_video/global_refine/draw_pose")
-  parser.add_argument('--video_dir', type=str, default="/home/bowen/debug/2022-11-18-15-10-24_milk/")
-  parser.add_argument('--out_folder', type=str, default="/home/bowen/debug/bundlesdf_2022-11-18-15-10-24_milk")
+  parser.add_argument('--video_dir', type=str, default="/home/shaol/xzhixuan/projects/BundleSDF/data/2022-11-18-15-10-24_milk")
+  parser.add_argument('--out_folder', type=str, default="/home/shaol/xzhixuan/projects/BundleSDF/data/bundlesdf_2022-11-18-15-10-24_milk")
   parser.add_argument('--use_segmenter', type=int, default=0)
   parser.add_argument('--use_gui', type=int, default=1)
   parser.add_argument('--stride', type=int, default=1, help='interval of frames to run; 1 means using every frame')
